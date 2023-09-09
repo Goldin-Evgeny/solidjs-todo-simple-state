@@ -1,16 +1,13 @@
 import styles from './ActionsBox.module.scss';
 
 export default function ActionsBox(props) {
-  console.log(props.bgColor());
   return (
     <div class={styles.root}>
       <div>
         <input
           type="color"
-          onChange={(e) => {
-            props.setBgColor(e.target.value);
-          }}
-          value={props.bgColor()}
+          on
+          onInput={(e) => props.setBgColor(e.target.value)}
         />
       </div>
       <div>

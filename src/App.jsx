@@ -6,7 +6,7 @@ export default function App() {
   const [todos, setTodos] = createSignal([]);
   const [filter, setFilter] = createSignal('All');
   const [newTodo, setNewTodo] = createSignal('');
-  const [bgColor, setBgColor] = createSignal('#ffffff');
+  const [bgColor, setBgColor] = createSignal('#000000');
 
   const filteredTodos = createMemo(() => {
     if (filter() === 'All') return todos();
@@ -16,7 +16,6 @@ export default function App() {
     return [];
   });
 
-  console.log({ bgColor: bgColor() });
   return (
     <div class={styles.root}>
       <MainBox

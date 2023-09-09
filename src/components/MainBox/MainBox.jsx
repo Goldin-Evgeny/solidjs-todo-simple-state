@@ -5,12 +5,11 @@ import styles from './MainBox.module.scss';
 
 export default function MainBox(props) {
   return (
-    <div class={styles.root}>
+    <div class={styles.root} style={{ 'background-color': props.bgColor() }}>
       <ActionsBox
         setFilter={props.setFilter}
         setBgColor={props.setBgColor}
         filter={props.filter}
-        bgColor={props.bgColor}
       />
       <TodosListBox todos={props.todos} setTodos={props.setTodos} />
       <EditBox
