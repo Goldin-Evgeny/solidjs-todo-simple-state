@@ -1,0 +1,30 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  button {
+    margin: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  input[type='color'] {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .active {
+    border: 1px solid #007bff;
+  }
+}
