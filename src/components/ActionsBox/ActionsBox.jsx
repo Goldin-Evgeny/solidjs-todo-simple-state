@@ -1,31 +1,28 @@
 import styles from './ActionsBox.module.scss';
+import { setBgColor, setFilter, filter } from '../../store/index';
 
 export default function ActionsBox(props) {
   return (
     <div class={styles.root}>
       <div>
-        <input
-          type="color"
-          on
-          onInput={(e) => props.setBgColor(e.target.value)}
-        />
+        <input type="color" on onInput={(e) => setBgColor(e.target.value)} />
       </div>
       <div>
         <button
-          onClick={() => props.setFilter('All')}
-          class={props.filter() === 'All' ? styles.active : ''}
+          onClick={() => setFilter('All')}
+          class={filter() === 'All' ? styles.active : ''}
         >
           All
         </button>
         <button
-          onClick={() => props.setFilter('Active')}
-          class={props.filter() === 'Active' ? styles.active : ''}
+          onClick={() => setFilter('Active')}
+          class={filter() === 'Active' ? styles.active : ''}
         >
           Active
         </button>
         <button
-          onClick={() => props.setFilter('Completed')}
-          class={props.filter() === 'Completed' ? styles.active : ''}
+          onClick={() => setFilter('Completed')}
+          class={filter() === 'Completed' ? styles.active : ''}
         >
           Completed
         </button>

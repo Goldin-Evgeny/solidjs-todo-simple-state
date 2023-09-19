@@ -1,21 +1,19 @@
 import styles from './EditBox.module.scss';
+import { newTodo, setNewTodo, todos, setTodos } from '../../store/index';
 
-export default function EditBox(props) {
+export default function EditBox() {
   return (
     <div class={styles.root}>
       <input
         type="text"
-        value={props.newTodo()}
-        onInput={(e) => props.setNewTodo(e.target.value)}
+        value={newTodo()}
+        onInput={(e) => setNewTodo(e.target.value)}
       />
       <button
         onClick={() => {
-          const newTodos = [
-            ...props.todos(),
-            { text: props.newTodo(), completed: false },
-          ];
-          props.setTodos(newTodos);
-          props.setNewTodo('');
+          const newTodos = [...todos(), { text: newTodo(), completed: false }];
+          setTodos(newTodos);
+          setNewTodo('');
         }}
       >
         Add
