@@ -1,7 +1,7 @@
 import styles from './ActionsBox.module.scss';
 import { setBgColor, setFilter, filter } from '../../store/index';
 
-export default function ActionsBox(props) {
+export default function ActionsBox() {
   return (
     <div class={styles.root}>
       <div>
